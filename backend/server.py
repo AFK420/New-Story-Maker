@@ -382,6 +382,23 @@ async def delete_character(character_id: str):
 @api_router.post("/worlds", response_model=World)
 async def create_world(world_data: WorldCreate):
     world_dict = world_data.dict()
+    
+    # Handle optional nested models - create default instances if None
+    if world_dict.get("geography") is None:
+        world_dict["geography"] = WorldGeography()
+    if world_dict.get("governance") is None:
+        world_dict["governance"] = WorldGovernance()
+    if world_dict.get("conflict") is None:
+        world_dict["conflict"] = WorldConflict()
+    if world_dict.get("culture") is None:
+        world_dict["culture"] = WorldCulture()
+    if world_dict.get("modern_aspects") is None:
+        world_dict["modern_aspects"] = WorldModern()
+    if world_dict.get("themes") is None:
+        world_dict["themes"] = WorldThemes()
+    if world_dict.get("details") is None:
+        world_dict["details"] = WorldDetails()
+    
     world = World(**world_dict)
     result = await db.worlds.insert_one(world.dict())
     if result.inserted_id:
