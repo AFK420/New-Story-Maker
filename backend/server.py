@@ -316,6 +316,23 @@ async def root():
 @api_router.post("/characters", response_model=Character)
 async def create_character(character_data: CharacterCreate):
     character_dict = character_data.dict()
+    
+    # Handle optional nested models - create default instances if None
+    if character_dict.get("psychology") is None:
+        character_dict["psychology"] = CharacterPsychology()
+    if character_dict.get("conflicts") is None:
+        character_dict["conflicts"] = CharacterConflicts()
+    if character_dict.get("background") is None:
+        character_dict["background"] = CharacterBackground()
+    if character_dict.get("moral_edges") is None:
+        character_dict["moral_edges"] = CharacterMoral()
+    if character_dict.get("social_dynamics") is None:
+        character_dict["social_dynamics"] = CharacterSocial()
+    if character_dict.get("quirks") is None:
+        character_dict["quirks"] = CharacterQuirks()
+    if character_dict.get("narrative") is None:
+        character_dict["narrative"] = CharacterNarrative()
+    
     character = Character(**character_dict)
     result = await db.characters.insert_one(character.dict())
     if result.inserted_id:
