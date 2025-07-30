@@ -1297,7 +1297,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/create-story" element={<CreateStory />} />
-
+          <Route path="/create-character" element={<CreateCharacter />} />
           <Route path="/create-world" element={<div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><div className="text-xl">World Builder - Coming Soon!</div></div>} />
           <Route path="/story/:id" element={<div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><div className="text-xl">Story View - Coming Soon!</div></div>} />
         </Routes>
