@@ -448,6 +448,13 @@ async def delete_world(world_id: str):
 @api_router.post("/stories", response_model=Story)
 async def create_story(story_data: StoryCreate):
     story_dict = story_data.dict()
+    
+    # Handle optional nested models - create default instances if None
+    if story_dict.get("structure") is None:
+        story_dict["structure"] = StoryStructure()
+    if story_dict.get("plot") is None:
+        story_dict["plot"] = StoryPlot()
+    
     story = Story(**story_dict)
     result = await db.stories.insert_one(story.dict())
     if result.inserted_id:
