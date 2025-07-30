@@ -946,6 +946,332 @@ const CreateCharacter = () => {
               </section>
             )}
 
+            {/* Moral Edges Section */}
+            {activeSection === 'moral' && (
+              <section className="bg-gray-800 rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 text-purple-400 flex items-center">
+                  <span className="text-3xl mr-3">⚖️</span>
+                  Moral Edges & Dark Side
+                </h2>
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Line They'd Never Cross</label>
+                      <textarea
+                        name="moral_edges.line_never_cross"
+                        value={formData.moral_edges.line_never_cross}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What moral boundary would they never violate, no matter what?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Worst Thing They've Done</label>
+                      <textarea
+                        name="moral_edges.worst_thing_done"
+                        value={formData.moral_edges.worst_thing_done}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What's the most morally questionable thing they've done?"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">How They Justify Wrongdoing</label>
+                    <textarea
+                      name="moral_edges.justification_wrongdoing"
+                      value={formData.moral_edges.justification_wrongdoing}
+                      onChange={handleInputChange}
+                      rows="4"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                      placeholder="How do they rationalize their bad choices? What's their moral logic?"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Villain Origin Story</label>
+                      <textarea
+                        name="moral_edges.villain_origin"
+                        value={formData.moral_edges.villain_origin}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What could turn this character into the antagonist?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Path to Self-Destruction</label>
+                      <textarea
+                        name="moral_edges.self_destruction_path"
+                        value={formData.moral_edges.self_destruction_path}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="How might they destroy themselves if left unchecked?"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Social Dynamics Section */}
+            {activeSection === 'social' && (
+              <section className="bg-gray-800 rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 text-purple-400 flex items-center">
+                  <span className="text-3xl mr-3">👥</span>
+                  Social Dynamics & Relationships
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Public vs Private Self</label>
+                    <textarea
+                      name="social_dynamics.public_vs_private_self"
+                      value={formData.social_dynamics.public_vs_private_self}
+                      onChange={handleInputChange}
+                      rows="4"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                      placeholder="How different are they in public vs when alone? What mask do they wear?"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Role in Groups</label>
+                      <textarea
+                        name="social_dynamics.group_role"
+                        value={formData.social_dynamics.group_role}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="Leader? Follower? Mediator? Rebel? How do they function in groups?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Love Language & Attachment</label>
+                      <textarea
+                        name="social_dynamics.love_language_attachment"
+                        value={formData.social_dynamics.love_language_attachment}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="How do they show and receive love? Attachment style?"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Treatment of the Weak</label>
+                      <textarea
+                        name="social_dynamics.treatment_of_weak"
+                        value={formData.social_dynamics.treatment_of_weak}
+                        onChange={handleInputChange}
+                        rows="3"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="How do they treat those with less power? This reveals true character..."
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Jealousy Triggers</label>
+                      <textarea
+                        name="social_dynamics.jealousy_triggers"
+                        value={formData.social_dynamics.jealousy_triggers}
+                        onChange={handleInputChange}
+                        rows="3"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What makes them envious? Success? Love? Attention?"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Loyalty Level & Conditions</label>
+                    <textarea
+                      name="social_dynamics.loyalty_level"
+                      value={formData.social_dynamics.loyalty_level}
+                      onChange={handleInputChange}
+                      rows="3"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                      placeholder="How loyal are they? What would make them betray someone?"
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Quirks Section */}
+            {activeSection === 'quirks' && (
+              <section className="bg-gray-800 rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 text-purple-400 flex items-center">
+                  <span className="text-3xl mr-3">✨</span>
+                  Quirks & Personality Details
+                </h2>
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Weird Habits</label>
+                      <textarea
+                        name="quirks.weird_habits"
+                        value={formData.quirks.weird_habits}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="Strange rituals, superstitions, or habits that make them unique..."
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Physical Tics & Tells</label>
+                      <textarea
+                        name="quirks.physical_tics"
+                        value={formData.quirks.physical_tics}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="Nervous habits, gestures, ways they move when stressed/happy/angry..."
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Obsessions & Hobbies</label>
+                      <textarea
+                        name="quirks.obsessions_hobbies"
+                        value={formData.quirks.obsessions_hobbies}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What are they passionate about? Collections? Skills? Interests?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Voice & Speech Pattern</label>
+                      <textarea
+                        name="quirks.voice_speech_pattern"
+                        value={formData.quirks.voice_speech_pattern}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="How do they sound? Accent? Catchphrases? Speaking style?"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">What Makes Them Laugh</label>
+                      <textarea
+                        name="quirks.what_makes_laugh"
+                        value={formData.quirks.what_makes_laugh}
+                        onChange={handleInputChange}
+                        rows="3"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="Sense of humor? What do they find funny?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">What Makes Them Cry</label>
+                      <textarea
+                        name="quirks.what_makes_cry"
+                        value={formData.quirks.what_makes_cry}
+                        onChange={handleInputChange}
+                        rows="3"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="What breaks their heart? What moves them to tears?"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Narrative Section */}
+            {activeSection === 'narrative' && (
+              <section className="bg-gray-800 rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 text-purple-400 flex items-center">
+                  <span className="text-3xl mr-3">📖</span>
+                  Narrative & Story Function
+                </h2>
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Symbol/Color/Motif</label>
+                      <textarea
+                        name="narrative.symbol_color_motif"
+                        value={formData.narrative.symbol_color_motif}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="Visual or symbolic elements associated with this character..."
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Character Arc in One Word</label>
+                      <textarea
+                        name="narrative.character_arc_word"
+                        value={formData.narrative.character_arc_word}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="If their journey had to be summed up in one word, what would it be?"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Connection to Story Theme</label>
+                    <textarea
+                      name="narrative.theme_connection"
+                      value={formData.narrative.theme_connection}
+                      onChange={handleInputChange}
+                      rows="4"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                      placeholder="How does this character embody or challenge the story's main theme?"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Peak & Collapse Timing</label>
+                      <textarea
+                        name="narrative.peak_collapse_timing"
+                        value={formData.narrative.peak_collapse_timing}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="When do they reach their highest point? When do they fall?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Ending Feeling</label>
+                      <textarea
+                        name="narrative.ending_feeling"
+                        value={formData.narrative.ending_feeling}
+                        onChange={handleInputChange}
+                        rows="4"
+                        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                        placeholder="How should readers feel about this character by the end?"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Relationships Section */}
+            <div className="mt-8">
+              <section className="bg-gray-800 rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 text-purple-400">Key Relationships</h2>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Important Relationships & Dynamics</label>
+                  <textarea
+                    name="relationships"
+                    value={formData.relationships}
+                    onChange={handleInputChange}
+                    rows="6"
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-400"
+                    placeholder="Describe key relationships: family, friends, enemies, love interests, mentors... How do they interact with others?"
+                  />
+                </div>
+              </section>
+            </div>
+
             {/* Submit Button */}
             <div className="mt-8 text-center">
               <button
